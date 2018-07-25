@@ -7,13 +7,17 @@
 @if (Model.Count != 0)
 {
   <ol>
-    @foreach (var item in Model["drinks"])
+    @foreach (var drinks in Model["drinks"])
     {
-      <li>@item.GetName() Units| <a href="/inventory" class="deleteAction" id="@item.GetId()">Delete</a></li>
+      <li>@drinks.GetName() Units| <a href="/inventory" class="deleteAction" id="@drinks.GetId()">Delete</a></li>
     }
-    @foreach (var item in Model["inventories"])
+    @foreach (var inventories in Model["inventories"])
     {
-      <li>@item.GetItem()</li>
+      <li>@inventories.GetItem()</li>
+    }
+    @foreach (var amount in Model["ingredients"])
+    {
+      <li>@amount.GetAmount()</li>
     }
  </ol>
 }

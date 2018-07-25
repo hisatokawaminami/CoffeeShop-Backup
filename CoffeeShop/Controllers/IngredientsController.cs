@@ -26,8 +26,10 @@ namespace CoffeeShop.Controllers
       // Ingredient newIngredient = new Ingredient(drink, item, amount);
       List<Inventory> allInventories = Inventory.GetAll();
       List<Drink> allDrinks = Drink.GetAll();
+      List<Ingredient> allIngredients = Ingredient.GetAll();
       model.Add("drinks", allDrinks);
       model.Add("inventories", allInventories);
+      model.Add("ingredients", allIngredients);
       return View(model);
     }
 
